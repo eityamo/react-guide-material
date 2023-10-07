@@ -4,8 +4,8 @@ const Example = () => {
   const [count, setCount] = useState(0);
   const countUp = () => {
     setCount(count + 1);
-    setCount(prevState => prevState + 1);
-    console.log(count)  
+    setCount((prevState) => prevState + 1);
+    console.log(count);
   };
   const countDown = () => {
     setCount(count - 1);
