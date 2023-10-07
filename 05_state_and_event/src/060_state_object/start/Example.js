@@ -5,14 +5,16 @@ const Example = () => {
   const [person, setPerson] = useState(personObj);
 
   const changeName = (e) => {
-    setPerson({ name: e.target.value, age: person.age});
-  }
+    // Stateを更新する際は新しいオブジェクトを生成する必要がある
+    // setPerson({ name: e.target.value, age: person.age});
+    setPerson({ ...person, name: e.target.value });
+  };
   const changeAge = (e) => {
-    setPerson({ name: person.name, age: e.target.value});
-  }
+    setPerson({ name: person.name, age: e.target.value });
+  };
   const reset = () => {
-    setPerson({ name: "", age: ""});
-  }
+    setPerson({ name: "", age: "" });
+  };
   return (
     <>
       <h3>Name:{person.name}</h3>
@@ -23,7 +25,7 @@ const Example = () => {
         <button onClick={reset}>リセット</button>
       </div>
     </>
-  )
+  );
 };
 
 export default Example;
