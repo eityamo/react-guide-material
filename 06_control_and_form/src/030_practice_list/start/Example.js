@@ -1,11 +1,35 @@
+import Profile from "./components/Profile";
+
 const Example = () => {
+  const profiles = [
+    {
+      name: "Lisa",
+      age: 21,
+      hobbies: ["sports", "travel", "game"],
+    },
+    {
+      name: "Tom",
+      age: 25,
+      hobbies: ["movie", "music"],
+    },
+    {
+      name: "Geo",
+      age: 54,
+      hobbies: ["sports", "travel", "game"],
+    },
+  ];
   return (
     <>
-      <h3>練習問題</h3>
-      <p>Profileコンポーネントを使用して、完成コードと同じ画面を作成してください。</p>
-      <p>また、Profileコンポーネント内のリスト表示部分にkeyを設定して、ワーニング表示がされないようにしてください。</p>
       <ul>
-        {/* ここに記述 */}
+        {profiles.map((profile, index) => (
+          <li key={index}>
+            <Profile
+              name={profile.name}
+              age={profile.age}
+              hobbies={profile.hobbies}
+            />
+          </li>
+        ))}
       </ul>
     </>
   );
