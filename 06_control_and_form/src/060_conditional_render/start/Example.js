@@ -19,9 +19,21 @@ const Example = () => {
             console.log(animal.indexOf(filterVal));
             return isMatch;
           })
-          .map((animal) => (
-            <li key={animal}>{animal}</li>
-          ))}
+          .map((animal) => {
+            // if (animal === "Dog") {
+            //   return <li key={animal} >{animal}*2</li>
+            // } else {
+            //   return <li key={animal} >{animal}</li>
+            // }
+            // return (
+            //   <li key={animal}>
+            //     {animal === "Dog" ? animal + "大好き" : animal}
+            //   </li>
+            // );
+            return (
+              <li key={animal}>{animal}{(animal === "Dog" && "大好き")}</li>
+            );
+          })}
       </ul>
     </>
   );
