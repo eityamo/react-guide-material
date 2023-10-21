@@ -3,6 +3,7 @@ const Form = ({ createTodo }) => {
   const [enteredTodo, setEnteredTodo] = useState("");
 
   const addTodo = (e) => {
+    // リクエストとリロードをしないように設定
     e.preventDefault();
 
     const newTodo = {

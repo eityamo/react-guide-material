@@ -1,5 +1,6 @@
 import { useState } from "react";
-import List from "./List"
+import List from "./List";
+import Form from "./Form";
 
 const Todo = () => {
   const todosList = [
@@ -19,29 +20,21 @@ const Todo = () => {
 
   const [todos, setTodos] = useState(todosList);
 
-  const [enteredTodo, setEnteredTodo] = useState("");
-
-  const addTodo = () => {
-    setTodos(enteredTodo);
-  };
-
   const deleteTodo = (id) => {
     const newTodos = todos.filter((todo) => {
       return id !== todo.id;
     });
     setTodos(newTodos);
   };
+
+  const createTodo = (todo) => {
+    setTodos([...todos, todo]);
+  };
+
   return (
     <>
       <List todos={todos} deleteTodo={deleteTodo} />
-      <form onSubmit={addTodo}>
-        <input
-          type="text"
-          value={enteredTodo}
-          onChange={(e) => setEnteredTodo(e.target.value)}
-        />
-        <button>追加</button>
-      </form>
+      <Form createTodo={createTodo} />
     </>
   );
 };
