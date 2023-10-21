@@ -1,0 +1,14 @@
+const List = ({ todos, deleteTodo }) => {
+  return (
+    <div>
+      {todos.map((todo) => (
+        <div key={todo.id}>
+          <button onClick={() => deleteTodo(todo.id)}>完了</button>
+          <span>{todo.content}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default List;
