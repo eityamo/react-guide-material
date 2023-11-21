@@ -1,38 +1,11 @@
-import { useReducer } from "react";
+import { CalcProvider } from "./context/CalcContext";
+import { useDispatchCalc, useCalc } from "./context/CalcContext";
 
 const CALC_OPTIONS = ["add", "minus", "divide", "multiply"];
 
-const reducer = (state, { type, payload }) => {
-  switch (type) {
-    case "change": {
-      const { name, value } = payload;
-      return { ...state, [name]: value };
-    }
-    case "add": {
-      return { ...state, result: state.a + state.b };
-    }
-    case "minus": {
-      return { ...state, result: state.a - state.b };
-    }
-    case "divide": {
-      return { ...state, result: state.a / state.b };
-    }
-    case "multiply": {
-      return { ...state, result: state.a * state.b };
-    }
-    default:
-      throw new Error("operator is invalid");
-  }
-};
-
 const Example = () => {
-  const initState = {
-    a: 1,
-    b: 2,
-    result: 3,
-  };
-
-  const [state, dispatch] = useReducer(reducer, initState);
+  const dispatch = useDispatchCalc();
+  const state = useCalc();
 
   const calculate = (e) => {
     dispatch({type: e.target.value});
@@ -41,16 +14,7 @@ const Example = () => {
     dispatch({type: 'change', payload: {name: e.target.name, value: e.target.value}});
   };
   return (
-    /* 完成系のJSX */
-    // <CalcProvider>
-    //   <Input name="a"/>      
-    //   <Input name="b" />      
-    //   <Select />
-    //   <Result />      
-    // </CalcProvider>
-    <>
-      <h3>練習問題</h3>
-      <p>Example内のコードをコンポーネントに分割してください。また、ステートはContext経由でやり取りしてください。</p>
+    <CalcProvider>
       <div>
         a:
         <input
@@ -76,8 +40,8 @@ const Example = () => {
           </option>
         ))}
       </select>
-      <h3>結果：{state.result}</h3>
-    </>
+      <h3>結果：{state.result}</h3>  
+    </CalcProvider>
   );
 };
 
