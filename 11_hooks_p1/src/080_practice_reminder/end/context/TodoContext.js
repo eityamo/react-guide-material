@@ -3,7 +3,7 @@ import { createContext, useContext, useReducer } from "react";
 const TodoContext = createContext();
 const TodoDispatchContext = createContext();
 
-const todosList = [
+const todoList = [
   {
     id: 1,
     content: "店予約する",
@@ -41,7 +41,7 @@ const todoReducer = (todos, action) => {
 };
 
 const TodoProvider = ({ children }) => {
-  const [todos, dispatch] = useReducer(todoReducer, todosList);
+  const [todos, dispatch] = useReducer(todoReducer, todoList);
 
   return (
     <TodoContext.Provider value={todos}>
