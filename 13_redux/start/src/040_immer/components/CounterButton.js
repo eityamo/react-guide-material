@@ -4,10 +4,10 @@ import { add, minus } from "../store/modules/counter"
 const CounterButton = ({calcType, step}) => {
     
     const dispatch = useDispatch();
-    console.log(add(step))
+    // console.log(add(step))
     const clickHandler = () => {
         const action = calcType === '+' ? add(step) : minus(step);
-        console.log(action)
+        // console.log(action)
         dispatch(action);
     }
 
