@@ -7,9 +7,9 @@ function areEqual(prevProps, nextProps) {
     return true; // 再レンダリング発生なし
   }
   /*
-  nextProps を render に渡した結果が
-  prevProps を render に渡した結果となるときに true を返し
-  それ以外のときに false を返す
+  nextProps(前回のPropsの値) を render に渡した結果が
+  prevProps(今回のPropsの値) を render に渡した結果となるときに true を返し
+  それ以外のときに false を返す'
   */
 }
 
