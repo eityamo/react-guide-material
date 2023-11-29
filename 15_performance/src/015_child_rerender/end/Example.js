@@ -29,7 +29,7 @@ const Example = () => {
           >
             ボタンB
           </button>
-          <span>子のpropsに渡すstateを更新</span>
+          <span>子のstateを更新</span>
         </div>
       </div>
       <div>
