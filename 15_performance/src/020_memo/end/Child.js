@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 function areEqual(prevProps, nextProps) {
-  if(prevProps.countB !== nextProps.countB) {
+  if (prevProps.countB !== nextProps.countB) {
     return false; // 再レンダリング
   } else {
     return true; // 再レンダリング発生なし
@@ -13,13 +13,16 @@ function areEqual(prevProps, nextProps) {
   */
 }
 
-const ChildMemo = memo(({ countB }) => {
+const ChildMemo = memo(({ countB, onClick }) => {
   console.log("%cChild render", "color: red;");
 
   return (
-    <div className="child"
-    >
+    <div className="child">
       <h2>子コンポーネント領域</h2>
+      <div>
+        <button onClick={onClick}>ボタンB</button>
+        <span>子のpropsに渡すstateを更新</span>
+      </div>
       <span>ボタンBクリック回数：{countB}</span>
     </div>
   );
