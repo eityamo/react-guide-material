@@ -41,7 +41,17 @@
     },
     {
       "id": 3,
-      "username": "piyo三郎",
+      "username": "piyoさん",
+      "age": 50,
+      "hobbies": [
+        "筋トレ",
+        "水泳"
+      ],
+      "premiumAccount": true
+    },
+    {
+      "id": 10,
+      "username": "piyoさん",
       "age": 50,
       "hobbies": [
         "筋トレ",
