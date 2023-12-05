@@ -3,7 +3,10 @@ import { useRouter } from "next/router";
 export default function Setting({ query }) {
   const router = useRouter();
   const clickHandler = () => {
-    router.push('/', '/dummy-url');
+    // 履歴が残る
+    // router.push('/', '/dummy-url');
+    // 履歴を上書きする
+    router.replace('/', '/dummy-url');
   };
   return (
     <>
