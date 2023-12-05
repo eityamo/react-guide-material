@@ -6,7 +6,9 @@ export default function Setting({ query }) {
     // 履歴が残る
     // router.push('/', '/dummy-url');
     // 履歴を上書きする
-    router.replace('/', '/dummy-url');
+    // router.replace('/', '/dummy-url');
+    // router.back();
+    router.reload();
   };
   return (
     <>
