@@ -37,9 +37,9 @@ export default function PageLink() {
       <button onClick={() => router.push("/09_multipage_state/list")}>
         リストページへ
       </button>
-      <Link href="/09_multipage_state/list">
+      <a href="/09_multipage_state/list">
         <a>アンカータグ</a>
-      </Link>
+      </a>
     </div>
   );
 }
