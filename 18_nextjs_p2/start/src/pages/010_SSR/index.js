@@ -13,8 +13,8 @@ export default function SSR({ message }) {
 }
 
 export async function getServerSideProps(context) {
-  const { cokkie } = context.req.headers;
-  console.log('cokkie', cokkie);
+  const { cookie } = context.req.headers;
+  console.log('cookie', cookie);
   return {
     // redirect: {
     //   destination: "/",
