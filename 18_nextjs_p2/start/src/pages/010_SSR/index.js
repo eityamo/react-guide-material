@@ -12,14 +12,14 @@ export default function SSR({ message }) {
   return <h3>{state}</h3>;
 }
 
-export async function getServerSideProps(context) {
-  const { cookie } = context.req.headers;
-  console.log('cookie', cookie);
-  return {
-    // redirect: {
-    //   destination: "/",
-    //   permanent: true,
-    // },
-    props: { message: "From Srever Side Props" },
-  };
-}
+// export async function getServerSideProps(context) {
+//   const { cookie } = context.req.headers;
+//   console.log('cookie', cookie);
+//   return {
+//     redirect: {
+//       destination: "/",
+//       permanent: true,
+//     },
+//     props: { message: "From Srever Side Props" },
+//   };
+// }
