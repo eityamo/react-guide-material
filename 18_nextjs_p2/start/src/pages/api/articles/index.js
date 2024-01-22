@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const JSON_SEEVER_URL = "http://localhost:4030/articles";
+const JSON_SERVER_URL = `${process.env.JSON_SERVER_URL}/articles`;
 export default async function hander(req, res) {
   try {
     if (req.method === "GET") {
-      const result = await axios.get(JSON_SEEVER_URL).then((res) => res.data);
+      const result = await axios.get(JSON_SERVER_URL).then((res) => res.data);
       return res.status(200).json(result);
     }
   } catch {}
