@@ -18,7 +18,14 @@ test("h1が存在するかどうか", () => {
   // debug(imgE1);
 
   // const headingE1 = screen.getByRole("heading", { name: 'こんにちは' });
-  // debug(container);
-  const h2E1 = container.querySelector('h2');
-  debug(h2E1);
+  // debug(headingE1);
+
+  // const h2E1 = container.querySelector('h2');
+  // debug(h2E1);
+
+  // const elByLabel = screen.getAllByLabelText('氏名');
+  // debug(elByLabel);
+
+  const elByPlaceholder = screen.getAllByPlaceholderText('氏名');
+  debug(elByPlaceholder);
 });
