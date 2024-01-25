@@ -10,5 +10,25 @@ describe("Messageコンポーネントの動作確認", () => {
       expect(h2El).toBeInTheDocument();
     });
   });
+  describe("画面操作正常性確認", () => {
+    test("初期値の変更 > 送信ボタン押下", async () => {
+      const user = userEvent.setup();
+      render(<Message />);
+      const inputEl = screen.getByRole("textbox");
+      const btnEl = screen.getByRole("button", { name: "送信ボタン" });
+      const h2El = screen.getByRole("heading", { name: "入力された文字:" });
+      expect(btnEl).toBeDisabled();
+      expect(inputEl.value).toBe("");
+
+      await user.type(inputEl, "こんにちは");
+
+      expect(btnEl).not.toBeDisabled();
+
+      await user.click(btnEl);
+
+      expect(h2El.textContent).toBe("入力された文字:こんにちは");
+
+    });
+  });
 });
 test("ダミーテスト:削除して記載してください。", () => {});
