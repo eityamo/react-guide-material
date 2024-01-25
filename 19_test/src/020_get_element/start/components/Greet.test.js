@@ -26,6 +26,6 @@ test("h1が存在するかどうか", () => {
   // const elByLabel = screen.getAllByLabelText('氏名');
   // debug(elByLabel);
 
-  const elByPlaceholder = screen.getAllByPlaceholderText('氏名');
-  debug(elByPlaceholder);
+  // const elByPlaceholder = screen.getAllByPlaceholderText('氏名');
+  // debug(elByPlaceholder);
 });
